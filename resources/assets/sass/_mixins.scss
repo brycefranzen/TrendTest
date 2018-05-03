@@ -1,0 +1,142 @@
+@mixin border-radius($radius: null) {
+  @if ($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+         -o-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+  @else {
+    -webkit-border-radius: 0 !important;
+       -moz-border-radius: 0 !important;
+         -o-border-radius: 0 !important;
+        -ms-border-radius: 0 !important;
+            border-radius: 0 !important;
+  }
+}
+
+@mixin box-shadow($value: null) {
+   @if ($value) {
+   -webkit-box-shadow: $value;
+      -moz-box-shadow: $value;
+        -o-box-shadow: $value;
+       -ms-box-shadow: $value;
+           box-shadow: $value;
+  }
+  @else {
+   -webkit-box-shadow: none !important;
+      -moz-box-shadow: none !important;
+        -o-box-shadow: none !important;
+       -ms-box-shadow: none !important;
+           box-shadow: none !important;
+  }
+}
+
+@mixin text-shadow($value: null) {
+   @if ($value) {
+   -webkit-text-shadow: $value;
+      -moz-text-shadow: $value;
+        -o-text-shadow: $value;
+       -ms-text-shadow: $value;
+           text-shadow: $value;
+  }
+  @else {
+   -webkit-text-shadow: none !important;
+      -moz-text-shadow: none !important;
+        -o-text-shadow: none !important;
+       -ms-text-shadow: none !important;
+           text-shadow: none !important;
+  }
+}
+
+@mixin opacity($value) {
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value * 100})";
+  filter: Alpha(opacity = $value * 100);
+  opacity: $value;
+}
+
+@mixin transition($value: null) {
+  @if ($value) {
+    -webkit-transition: $value;
+       -moz-transition: $value;
+         -o-transition: $value;
+        -ms-transition: $value;
+            transition: $value;
+  }
+  @else {
+    -webkit-transition: all 100ms ease;
+       -moz-transition: all 100ms ease;
+         -o-transition: all 100ms ease;
+        -ms-transition: all 100ms ease;
+            transition: all 100ms ease;
+  }
+}
+
+@mixin placeholder($color, $margin, $padding, $size, $weight) {
+  ::-webkit-input-placeholder {
+        @include transition();
+          color: $color;
+         margin: $margin;
+        padding: $padding;
+      font-size: $size;
+    font-weight: $weight;
+        opacity: 1;
+     transition: all .2s cubic-bezier(.64, .09, .08, 1);
+  }
+
+  :-moz-placeholder {
+        @include transition();
+          color: $color;
+         margin: $margin;
+        padding: $padding;
+      font-size: $size;
+    font-weight: $weight;
+        opacity: 1;
+     transition: all .2s cubic-bezier(.64, .09, .08, 1);
+  }
+
+  ::-moz-placeholder {
+        @include transition();
+          color: $color;
+         margin: $margin;
+        padding: $padding;
+      font-size: $size;
+    font-weight: $weight;
+        opacity: 1;
+     transition: all .2s cubic-bezier(.64, .09, .08, 1);
+  }
+
+  :-ms-input-placeholder {
+        @include transition();
+          color: $color;
+         margin: $margin;
+        padding: $padding;
+      font-size: $size;
+    font-weight: $weight;
+        opacity: 1;
+     transition: all .2s cubic-bezier(.64, .09, .08, 1);
+  }
+}
+
+@mixin rotate($value) {
+        transform: rotate($value);
+    -ms-transform: rotate($value);
+   -moz-transform: rotate($value);
+-webkit-transform: rotate($value);
+     -o-transform: rotate($value);
+}
+
+@mixin vendor-prefix($variable, $value) {
+  #{$variable}: #{$value};
+  -ms-#{$variable}: #{$value};
+  -moz-#{$variable}: #{$value};
+  -webkit-#{$variable}: #{$value};
+  -o-#{$variable}: #{$value};
+}
+
+@mixin animation($prop) {
+  -webkit-animation: $prop;
+  -moz-animation: $prop;
+  -o-animation: $prop;
+  animation: $prop;
+}

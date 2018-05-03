@@ -1,0 +1,163 @@
+* {
+  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+  -ms-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+
+html,
+body {
+  height: 100%;
+  max-width: 1960px;
+  margin: auto;
+}
+
+body {
+  overflow: inherit !important;
+  padding: 0 !important;
+  background: $white;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+
+  img {
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    display: inline-block;
+  }
+}
+
+.home-page {
+  h2 {
+    color: #0b6890;
+    font-size: 50px;
+    margin-bottom: 30px;
+
+    span {
+      display: block;
+      color: #b5b5b5;
+    }
+  }
+
+  .number {
+    font-size: 80px;
+    color: #b5b5b5;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+
+    &.left {
+      &:before {
+        content: "";
+        background: url('../images/line.png');
+        background-repeat: no-repeat;
+        width: 100px;
+        height: 2px;
+        position: absolute;
+        left: -110px;
+        top: 65px;
+      }
+
+      &:after {
+        content: "";
+        background: url('../images/diagonal.png');
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 70px;
+        position: absolute;
+        left: 110px;
+        top: 35px;
+      }
+    }
+
+    &.right {
+      text-align: right;
+
+      &:before {
+        content: "";
+        background: url('../images/diagonal.png');
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 70px;
+        position: absolute;
+        right: 95px;
+        top: 35px;
+      }
+
+      &:after {
+        content: "";
+        background: url('../images/line.png');
+        background-repeat: no-repeat;
+        width: 100px;
+        height: 2px;
+        position: absolute;
+        right: -110px;
+        top: 65px;
+      }
+    }
+  }
+
+  .hero {
+    background: url('../images/hero.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    text-align: center;
+    padding-top: 300px;
+    position: relative;
+
+    h1 {
+      font-size: 60px;
+      color: $white;
+      margin: 0;
+      margin-bottom: 40px;
+
+      small {
+        font-size: 12px;
+        color: $white;
+        text-transform: uppercase;
+        display: block;
+        letter-spacing: 3px;
+        margin-bottom: 35px;
+      }
+    }
+
+    p {
+      color: $white;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .scroll-image {
+      position: absolute;
+      bottom: 70px;
+    }
+  }
+
+  .consultant {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    p {
+      max-width: 450px;
+    }
+
+    img {
+      margin-top: 40px;
+    }
+  }
+
+  .co-founder {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    img {
+      margin-top: 40px;
+    }
+  }
+}
